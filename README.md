@@ -1,5 +1,11 @@
 # SeedMercado Foundation Bounty
 
+> ## ⚠️ Real SEED contract address
+>
+> The **ONLY** legitimate SEED token is [`0xA0FbF7303e37f75F54352d80ae720aEb410777c8`](https://basescan.org/address/0xA0FbF7303e37f75F54352d80ae720aEb410777c8) on Base.
+>
+> At least one copycat token using the SeedMercado name and logo has been deployed by a third party. It is **not us**. Do not buy, swap, or interact with any SEED token at a different contract address. If you received SEED from the Foundation Bounty, verify the `token` field in the BaseScan tx matches the address above.
+
 **SEED-denominated community contribution program for [SeedMercado](https://seedmercado.io), the heirloom-seed marketplace on Base.**
 
 Community contributors who find bugs, grow the audience, create content, or build features get paid in SEED (the platform's reward token) from a public Foundation Bounty pot. No cash. No gatekeepers. Contributors who believe in the project's direction trade their time for SEED and share the upside.
