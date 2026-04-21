@@ -1,0 +1,59 @@
+name: Content bounty submission
+description: Submit a completed piece of content (tweet, cast, blog, video) to claim a SEED bounty.
+title: "[Content] "
+labels: ["bounty:open", "content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Content bounty rate card (all in SEED)
+
+        | Kind | Criteria | Reward |
+        |---|---|---|
+        | Short (tweet, cast) | Quality post about SeedMercado with real engagement | 20 to 50 SEED |
+        | Long (blog, TikTok, YouTube) | 500+ real views, genuine project coverage | 200 to 500 SEED |
+
+        Tag @seedmercado on X or mention SeedMercado.io with a link so it's verifiable. The main README has the full rate card + transparency paragraph.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Content type
+      options:
+        - Short (tweet or Farcaster cast)
+        - Long (blog post, TikTok, YouTube, podcast)
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Public URL to the content
+      description: Required. Must be publicly visible and not gated.
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What is the piece about, in one paragraph
+    validations:
+      required: true
+  - type: textarea
+    id: engagement
+    attributes:
+      label: Engagement metrics (for long-form only)
+      description: Views, likes, shares, comments. Screenshot is fine.
+    validations:
+      required: false
+  - type: input
+    id: wallet
+    attributes:
+      label: Base wallet address for payout
+      placeholder: "0x... or yourname.base.eth"
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact handle (optional)
+    validations:
+      required: false
