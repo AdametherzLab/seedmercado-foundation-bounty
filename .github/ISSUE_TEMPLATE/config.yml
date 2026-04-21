@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Submit on Telegram instead
+    url: https://t.me/SeedMercadoFoundation_bot
+    about: Skip GitHub entirely and submit via the Telegram bot. Faster for tweets, milestones, and small claims.
+  - name: SeedMercado marketplace
+    url: https://seedmercado.io
+    about: The live marketplace itself.
+  - name: Real SEED contract on BaseScan
+    url: https://basescan.org/address/0xA0FbF7303e37f75F54352d80ae720aEb410777c8
+    about: Only legitimate SEED token. Ignore copycats.
