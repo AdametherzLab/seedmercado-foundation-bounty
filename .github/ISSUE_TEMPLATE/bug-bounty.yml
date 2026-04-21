@@ -1,0 +1,84 @@
+name: Bug bounty submission
+description: Report a bug on seedmercado.io or the SeedMercado smart contracts to claim a SEED bounty.
+title: "[Bug] "
+labels: ["bounty:open", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug bounty rate card (all in SEED)
+
+        | Severity | Examples | Reward |
+        |---|---|---|
+        | Low | typo, broken link, missing alt text | 20 SEED |
+        | Medium | UX defect, bad error message, display bug | 50 to 100 SEED |
+        | High | data-loss risk, bad state, price mis-display | 200 to 500 SEED |
+        | Critical | fund loss, unauth access, contract bug | 1,000 to 5,000 SEED |
+
+        SEED has no DEX pool yet. You are taking equity-style exposure. See the main README for the full transparency paragraph.
+
+        Real SEED contract (only legit one): `0xA0FbF7303e37f75F54352d80ae720aEb410777c8`.
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Proposed severity
+      description: Your best-faith estimate. Final reward is set by the maintainer after verification.
+      options:
+        - Low (typo / broken link / cosmetic)
+        - Medium (UX defect / bad error / display issue)
+        - High (data loss risk / bad state / price mis-display)
+        - Critical (fund loss / unauth access / contract bug)
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: One-sentence summary
+      placeholder: "e.g., Listings page shows USDC price in wei not human-readable format"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps. Be specific. "Click X, observe Y."
+      placeholder: |
+        1. Go to seedmercado.io/...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser + OS, or wallet used, or contract call details. Screenshots if relevant (drag + drop).
+    validations:
+      required: false
+  - type: input
+    id: wallet
+    attributes:
+      label: Base wallet address for payout
+      description: Where to send the SEED on verification. Use a basename if you have one.
+      placeholder: "0x... or yourname.base.eth"
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact handle (optional)
+      description: Telegram or X handle for follow-up. Payment via the SeedMercado Bounty Telegram bot after verification.
+    validations:
+      required: false
