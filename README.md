@@ -2,7 +2,9 @@
 
 **LIVE 2026-04-21** — 50,000 SEED funded on-chain at [`seedmercado.base.eth`](https://basescan.org/token/0xA0FbF7303e37f75F54352d80ae720aEb410777c8?a=0x19751730b8f5103013aC29C4DdF908b7CF1d90bD). Pays community contributors in SEED using the Slicing Pie equity model.
 
-→ **[Claim a bounty in 60 seconds](#claim-in-60-seconds)** · **[Rate card](#rate-card)** · **[Open bounties](#open-bounties)**
+**First organic bounty paid 2026-04-22** (claim #2, 20 SEED, real external contributor for a quality retweet).
+
+→ **[Claim a bounty in 60 seconds](#claim-in-60-seconds)** · **[Rate card](#rate-card)** · **[Wallets & transparency](#wallets--transparency)** · **[Open bounties](#open-bounties)**
 
 > ## ⚠️ Real SEED contract address
 >
@@ -38,21 +40,38 @@ First 10 clean claims get a shoutout on @seedmercado. That's the only promise. E
    - `/post <tweet-or-cast-URL>` for content claims
    - `/milestone <description + evidence>` for growth or larger claims
    - Bug reports: open a GitHub Issue on this repo (link above)
-4. **Admin approves** within 24-48 hours. SEED lands in the wallet you registered.
+4. **Admin approves** within 24-48 hours. SEED lands in the wallet you registered — usually in under a minute after approval.
 
 You can check your claims anytime with `/status`.
 
 ---
 
-## Pot
+## Wallets & transparency
 
-| Item | Value |
-|---|---|
-| Pot wallet | [`seedmercado.base.eth`](https://basescan.org/address/0x19751730b8f5103013aC29C4DdF908b7CF1d90bD) (`0x19751730b8f5103013aC29C4DdF908b7CF1d90bD`) |
-| Initial allocation | 50,000 SEED (5% of current supply) |
-| Funded | 2026-04-21 ([tx](https://basescan.org/tx/0xfda184a603da01849cf7af96f72b2e5d1b89ec579327a4cc1bb26f6904038984)) |
-| Live balance | [See on BaseScan](https://basescan.org/token/0xA0FbF7303e37f75F54352d80ae720aEb410777c8?a=0x19751730b8f5103013aC29C4DdF908b7CF1d90bD) |
-| SEED token | [`0xA0FbF7303e37f75F54352d80ae720aEb410777c8`](https://basescan.org/address/0xA0FbF7303e37f75F54352d80ae720aEb410777c8) |
+Three project-controlled wallets make up the SEED supply. Every balance and transfer is public on Base.
+
+| Role | Address | Balance (approx) | Purpose |
+|---|---|---|---|
+| **Treasury** (genesis mint) | [`0xc226...9310`](https://basescan.org/token/0xA0FbF7303e37f75F54352d80ae720aEb410777c8?a=0xc226f2A5d61103EC31672D97aD1a179b64BE9310) | ~950,000 SEED (95% of supply) | Long-term reserve. Rarely touched. Future allocations (liquidity, incentive pools, etc.) will move from here with explicit public announcement before each transfer. |
+| **Cold bounty pot** `seedmercado.base.eth` | [`0x1975...90bD`](https://basescan.org/token/0xA0FbF7303e37f75F54352d80ae720aEb410777c8?a=0x19751730b8f5103013aC29C4DdF908b7CF1d90bD) | ~49,000 SEED (Foundation Bounty reserve) | Holds the bounty pool. Signed only by admin's phone wallet, off-VPS. Funds larger/manual payouts and refills the hot wallet. |
+| **Hot payout wallet** | [`0x0219...5b87`](https://basescan.org/token/0xA0FbF7303e37f75F54352d80ae720aEb410777c8?a=0x02196a230b9433cB24324f26202A131978A95b87) | ~1,000 SEED (rolling) | Signs small bot-initiated `/payout` transactions for speed. Capped at 1,000 SEED per transaction. Blast radius if VPS is compromised: ~1,000 SEED = 0.1% of supply. |
+
+### How payouts actually flow
+
+- **Small + approved claims (up to 1,000 SEED):** admin approves → bot signs with hot wallet → SEED lands in contributor's wallet in under a minute. No cold-pot movement per claim.
+- **Larger payouts** (high-severity bug bounties, large dev bounties): admin signs directly from the cold pot via phone wallet, then records the tx in the bot via `/paid <claim> <tx>` so the audit trail stays complete.
+
+### Hot wallet replenishment rule
+
+When the hot wallet drops below 300 SEED, the bot DMs the admin. Admin manually transfers 1,000 SEED from cold pot to hot wallet from their phone wallet. **The bot does NOT auto-refill itself** — that would defeat the blast-radius cap. Every refill is a deliberate, human-signed, BaseScan-visible transfer.
+
+### On-chain milestones
+
+| Event | Date | Tx |
+|---|---|---|
+| Pot funded (50k SEED from treasury → cold pot) | 2026-04-21 | [`0xfda1...8984`](https://basescan.org/tx/0xfda184a603da01849cf7af96f72b2e5d1b89ec579327a4cc1bb26f6904038984) |
+| First hot wallet refill (1k SEED from cold pot → hot wallet) | 2026-04-21 | [`0x7fad...615f`](https://basescan.org/tx/0x7fad19607188b25a452253cd551b58395845f61fe0e46562221a9defdca3615f) |
+| First organic bounty paid (20 SEED to external contributor for a retweet) | 2026-04-22 | see bot audit log + hot wallet's outbound transfers on BaseScan |
 
 ---
 
@@ -109,9 +128,9 @@ Live channels to discover bounties:
 
 ## Ownership and governance
 
-- **Pot control:** today, `seedmercado.base.eth` is controlled by Adam Etherzlab's phone wallet. A dedicated hot wallet on the VPS signs automated small payouts (capped at ~1,000 SEED rolling balance; compromise radius is 0.1% of supply).
-- **Approvals:** every claim is reviewed by the admin. Progressive trust: after a contributor has 3+ cleanly paid claims, small future claims may auto-pay within a 1-hour veto window.
-- **Refill:** when the hot wallet drops below 200 SEED, admin tops it up from the cold pot. Pot refills from treasury require a separate, documented decision.
+- **Pot control:** see [Wallets & transparency](#wallets--transparency) above for full breakdown.
+- **Approvals:** every claim is reviewed by the admin. Progressive trust: after a contributor has 3+ cleanly paid claims, small future claims may auto-pay within a 1-hour veto window (not yet enabled).
+- **Refill:** when hot wallet drops below 300 SEED, bot DMs admin; admin tops up 1,000 SEED from cold pot via phone wallet. Pot refills from treasury require a separate, publicly announced decision.
 - **Transparency:** every payout is visible on BaseScan. Every claim is recorded in the bot's local store + audit log.
 - **Sybil defense:** contributors who `/start` self-register are admin-review-gated on their first claim. Duplicate claims (same URL) within 30 days are auto-rejected. Daily submission cap per contributor.
 
