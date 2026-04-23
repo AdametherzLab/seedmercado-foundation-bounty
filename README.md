@@ -104,6 +104,7 @@ Live channels to discover bounties:
 | **Bountycaster** (Farcaster) | **LIVE** | [30 SEED x 5 content bounty](https://farcaster.xyz/seedmercado) |
 | **@seedmercado on X** | **LIVE** — posts + mentions | [x.com/seedmercado](https://x.com/seedmercado) |
 | **Telegram bot** | **LIVE** | [@SeedMercadoFoundation_bot](https://t.me/SeedMercadoFoundation_bot) |
+| **Telegram community** | **LIVE** — group chat for growers + contributors | [t.me/seedmercado](https://t.me/seedmercado) |
 | Gitcoin bounties | Deferred | — |
 | Layer3 quests | Deferred (self-serve flow unclear for small projects) | — |
 | Dework tasks | Deferred (Base L2 not supported for on-chain rewards) | — |
@@ -142,6 +143,8 @@ Live channels to discover bounties:
 
 - [SeedMercado.io](https://seedmercado.io) — the marketplace itself
 - [@seedmercado on X](https://x.com/seedmercado) — announcements + autonomous reply bot
+- [t.me/seedmercado](https://t.me/seedmercado) — Telegram community for growers, claimers, and contributors
+- [@SeedMercadoFoundation_bot](https://t.me/SeedMercadoFoundation_bot) — Telegram bounty-claim bot
 - [@seedmercado on Farcaster](https://farcaster.xyz/seedmercado) — same brand, crypto-native audience
 - [Balcony Bounty #1](https://seedmercado.io/marketplace/listings/1) — live free-seed listing (first 25 claimers get a FoundingMember1 NFT)
 - [SeedMercado marketplace contract](https://basescan.org/address/0xcb3336d980ab6678f68BDd081e2F4D29E0C4CF43) on BaseScan
