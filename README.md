@@ -124,6 +124,8 @@ Live channels to discover bounties:
 
 **Cash is not on the table.** The project has no USDC / USDT / stablecoin budget, now or on future engagements. Candidates who counter-offer stablecoin compensation are politely declined. This is not a negotiation stance; it is the structural reality of a founder-stage project that chose equity-style bootstrapping.
 
+**The platform codebase is private (for now).** SeedMercado's smart contracts are public and verified on BaseScan. They hold all user-facing state: balances, trades, rewards, fees, reward-halving rules, and contributor payouts. Everything that affects user funds is inspectable on-chain today. The platform's frontend and backend repositories are currently kept private while the project is pre-audit and pre-meaningful-TVL, primarily to contain secrets-hygiene risk (treasury + signer keys live on the ops VPS) and to keep the attack surface small at 19 wallets of scale. For dev bounties, contributors receive scoped code access upon claim acceptance: either the specific files they need shared via gist, or a read-only fork of the relevant directory. This lets real engineers work on real files while filtering out AI-generated claim spam that cannot describe code it has not seen. Once the platform has completed a paid third-party audit and rotated signer keys to a multisig or hardware wallet, we plan to open-source in stages — frontend first, backend later.
+
 ---
 
 ## Ownership and governance
